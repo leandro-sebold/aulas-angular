@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home.component';
-import { NavbarComponent } from './nav-bar/nav-bar.component';
+import { MeuBotaoComponent } from './meu-botao/meu-botao.component';
 
 // Este é um exemplo de um módulo de funcionalidade
 @NgModule({
@@ -16,7 +16,7 @@ import { NavbarComponent } from './nav-bar/nav-bar.component';
   // Nunca mais de um.
   declarations: [
     HomeComponent,
-    NavbarComponent
+    MeuBotaoComponent
   ],
 
   // A propriedade 'exports' serve para declararmos quais componentes ou serviços queremos que outras pessoas possam utilizar também.
