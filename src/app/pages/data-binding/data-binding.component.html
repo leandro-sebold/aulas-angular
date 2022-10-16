@@ -1,0 +1,66 @@
+<h1>Aula(s) sobre Data Binding</h1>
+
+<section>
+
+  <article>
+    <h2>Interpolation / Interpolação</h2>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor()}}</p>
+    <p>Hoje é terça e tem aula de WEB: {{ aulaWeb && getEhTerca() }}</p>
+  </article>
+
+  <article>
+    <h2>Property Binding</h2>
+    <!-- Primeira forma de fazer -->
+    <img src="{{ urlImagem }}">
+
+    <!-- Forma explicita de fazer property-binding, essa é a forma com que o angular 
+    entende o property-binding. Essa forma também é chamada de syntax-sugar
+    ou sintaxe açucarada, é uma forma mais amigavel para o densenvolver codificar-->
+    <img [src]="urlImagem">
+
+    <!-- Isso é o que angular faz por debaixo dos panos,
+    ele adiciona o nome 'bind-' atrás da propriedade -->
+    <img bind-src="urlImagem">
+  </article>
+
+  <article>
+    <h2>Class e style binding</h2>
+
+    <select #select (change)="0">
+      <option value="alert-primary">Primary</option>
+      <option value="alert-success">Success</option>
+      <option value="alert-danger">Danger</option>
+      <option value="alert-warning">Warning</option>
+      <option value="alert-info">Info</option>
+    </select>
+
+    <div class="alert {{ select.value }}">
+      Esse texto se colore conforme a seleção usando a interpolação
+    </div>
+
+    <div class="alert" [class.alert-primary]="select.value === 'alert-primary'">
+      Primary
+    </div>
+    <div class="alert" [class.alert-success]="select.value === 'alert-success'">
+      Success
+    </div>
+    <div class="alert" [class.alert-danger]="select.value === 'alert-danger'">
+      Danger
+    </div>
+    <div class="alert" [class.alert-warning]="select.value === 'alert-warning'">
+      Warning
+    </div>
+    <div class="alert" [class.alert-info]="select.value === 'alert-info'">
+      Info
+    </div>
+
+    <div class="alert alert-danger"
+      [style.display]="select.value === 'alert-danger' ? 'block' : 'none'">
+      Esse erro só aparece caso a classe seja 'alert-danger'
+    </div>
+
+  </article>
+
+</section>

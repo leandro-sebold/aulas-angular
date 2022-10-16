@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { HomeComponent } from './home.component';
+import { DataBindingComponent } from './data-binding.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    HomeComponent
+    DataBindingComponent
   ]
 })
-export class HomeModule { }
+export class DataBindingModule { }

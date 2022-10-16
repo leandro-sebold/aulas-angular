@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DataBindingModule } from './pages/data-binding/data-binding.module';
 import { HomeModule } from './pages/home/home.module';
 
 // Decorator ou decorador @ngModule. Usado para "Decorar" a classe e informar pro angular que elá será um módulo.
@@ -19,6 +21,8 @@ import { HomeModule } from './pages/home/home.module';
     // O principal e que só precisa ser importado no módulo principal da aplicação, ou seja, o módulo raiz
     // é o BrowserModule que realiza configurações para que a aplicação rode em navegadores;
     BrowserModule,
+    AppRoutingModule,
+    DataBindingModule,
     HomeModule
   ],
 
