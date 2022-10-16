@@ -1,0 +1,40 @@
+<article>
+  <h2>Class e style binding</h2>
+
+  <!-- O #select é uma variável angular e que só o angular entende.
+  
+  -->
+  <select #select (change)="0">
+    <option value="alert-primary">Primary</option>
+    <option value="alert-success">Success</option>
+    <option value="alert-danger">Danger</option>
+    <option value="alert-warning">Warning</option>
+    <option value="alert-info">Info</option>
+  </select>
+
+  <div class="alert {{ select.value }}">
+    Esse texto se colore conforme a seleção usando a interpolação
+  </div>
+
+  <div class="alert" [class.alert-primary]="select.value === 'alert-primary'">
+    Primary
+  </div>
+  <div class="alert" [class.alert-success]="select.value === 'alert-success'">
+    Success
+  </div>
+  <div class="alert" [class.alert-danger]="select.value === 'alert-danger'">
+    Danger
+  </div>
+  <div class="alert" [class.alert-warning]="select.value === 'alert-warning'">
+    Warning
+  </div>
+  <div class="alert" [class.alert-info]="select.value === 'alert-info'">
+    Info
+  </div>
+
+  <div class="alert alert-danger"
+    [style.display]="select.value === 'alert-danger' ? 'block' : 'none'">
+    Esse erro só aparece caso a classe seja 'alert-danger'
+  </div>
+
+</article>

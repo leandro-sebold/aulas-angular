@@ -1,0 +1,14 @@
+<article>
+  <h2>Property Binding</h2>
+  <!-- Primeira forma de fazer -->
+  <img src="{{ urlImagem }}">
+
+  <!-- Forma explicita de fazer property-binding, essa é a forma com que o angular 
+  entende o property-binding. Essa forma também é chamada de syntax-sugar
+  ou sintaxe açucarada, é uma forma mais amigavel para o densenvolver codificar-->
+  <img [src]="urlImagem">
+
+  <!-- Isso é o que angular faz por debaixo dos panos,
+  ele adiciona o nome 'bind-' atrás da propriedade -->
+  <img bind-src="urlImagem">
+</article>
