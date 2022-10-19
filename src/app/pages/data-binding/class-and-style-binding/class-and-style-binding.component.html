@@ -1,10 +1,30 @@
 <article>
+
   <h2>Class e style binding</h2>
 
-  <!-- O #select é uma variável angular e que só o angular entende.
-  
-  -->
-  <select #select (change)="0">
+  <input type="text"
+  (keyup)="keyDown($event.target.value)"
+  (change)="change($event)"
+  (focus)="change1($event)"
+  (focusout)="change2($event)"
+  (blur)="change3($event)"
+  >
+
+  <h1>{{ corAplicada }}</h1>
+
+  <button (click)="aplicaCor()">
+    {{ corAplicada ? 'Tirar cor' : 'Aplicar Cor' }}
+  </button>
+
+  <div [id]="corAplicada">
+    {{ corAplicada ? 'Cor aplicada usando class binding' : 'Cor não está aplicada' }}
+  </div>
+  <div [style.background-color]="!corAplicada ? '#f8d7da' : 'white'">
+    {{ !corAplicada ? 'Cor aplicada usando style binding' : 'Cor não está aplicada' }}
+  </div>
+
+  <!-- 
+  <select #selecaoDeCores (change)="0">
     <option value="alert-primary">Primary</option>
     <option value="alert-success">Success</option>
     <option value="alert-danger">Danger</option>
@@ -12,29 +32,29 @@
     <option value="alert-info">Info</option>
   </select>
 
-  <div class="alert {{ select.value }}">
+  <div class="alert alert-danger"
+  [style.height.rem]="selecaoDeCores.value === 'alert-danger' ? 100 : 100">
+    Esse erro só aparece caso a classe seja 'alert-danger'
+  </div>
+
+  <div class="alert {{ selecaoDeCores.value }}">
     Esse texto se colore conforme a seleção usando a interpolação
   </div>
 
-  <div class="alert" [class.alert-primary]="select.value === 'alert-primary'">
+  <div class="alert" [class.alert-primary]="selecaoDeCores.value === 'alert-primary'">
     Primary
   </div>
-  <div class="alert" [class.alert-success]="select.value === 'alert-success'">
+  <div class="alert" [class.alert-success]="selecaoDeCores.value === 'alert-success'">
     Success
   </div>
-  <div class="alert" [class.alert-danger]="select.value === 'alert-danger'">
+  <div class="alert" [class.alert-danger]="selecaoDeCores.value === 'alert-danger'">
     Danger
   </div>
-  <div class="alert" [class.alert-warning]="select.value === 'alert-warning'">
+  <div class="alert" [class.alert-warning]="selecaoDeCores.value === 'alert-warning'">
     Warning
   </div>
-  <div class="alert" [class.alert-info]="select.value === 'alert-info'">
+  <div class="alert" [class.alert-info]="selecaoDeCores.value === 'alert-info'">
     Info
-  </div>
-
-  <div class="alert alert-danger"
-    [style.display]="select.value === 'alert-danger' ? 'block' : 'none'">
-    Esse erro só aparece caso a classe seja 'alert-danger'
-  </div>
+  </div> -->
 
 </article>

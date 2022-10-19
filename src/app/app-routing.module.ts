@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { DataBindingComponent } from './pages/data-binding/data-binding.component';
 import { HomeComponent } from './pages/home/home.component';
+import { InputsComponent } from './pages/inputs/inputs.component';
 
 // O routingModule é responsável por podermos criar rotas e configurar quais componentes serão responsáveis por cada página.
 const routes: Route[] = [
@@ -15,6 +16,10 @@ const routes: Route[] = [
   {
     path: 'data-binding',
     component: DataBindingComponent
+  },
+  {
+    path: 'inputs',
+    component: InputsComponent
   }
 ];
 

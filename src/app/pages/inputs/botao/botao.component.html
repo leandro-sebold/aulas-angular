@@ -1,0 +1,12 @@
+
+
+<button style="width: 100px; height: 40px;"
+    [style.background-color]="corFundo ? corFundo : corPadrao"
+    [style.color]="corTexto ? corTexto : 'black'"
+    [style.border-radius]="arredondamentoBorda ? arredondamentoBorda : '5px'"
+    (mouseenter)="mouseEnter($event)"
+    (mouseout)="mouseOut($event)"
+>
+    {{ textoBotao }}
+</button>
+
