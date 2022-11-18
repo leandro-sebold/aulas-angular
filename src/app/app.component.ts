@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppService } from './app.service';
+import { InputsComponent } from './pages/inputs/inputs.component';
 
 // Decorator ou decorador @Component. Usado para "Decorar" a classe e informar pro angular que elá será um componente.
 @Component({
@@ -10,4 +12,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { // consigo ter classes de uso interno, mas se eu precisar utilizar ela fora desse arquivo, preciso exportar ela.
   _title = 'APP Component'; // propriedade pública para definir um título que será utilizado no HTML.
+
+  constructor(
+    appService: AppService
+  ) {
+    appService.getOlaMundo().subscribe((cotacao) => {
+      console.log(cotacao);
+    })
+
+  }
+
 }

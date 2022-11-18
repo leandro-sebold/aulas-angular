@@ -10,6 +10,7 @@ import { BotaoComponent } from "./botao/botao.component";
     declarations: [
         InputsComponent,
         BotaoComponent
-    ]
+    ],
+    exports: [InputsComponent]
 })
 export class InputsModule { }
