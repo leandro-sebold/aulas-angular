@@ -7,6 +7,24 @@
 <app-inputs #meusInputs2></app-inputs>
 
 
+<select [(ngModel)]="selectedTag">
+  <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
+</select>
+
+<input type="number" [(ngModel)]="statusCode" />
+
+<button (click)="consultar()">Consultar</button>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<img *ngIf="linkImage" [src]="linkImage" />
 
 <header>
   <nav>

@@ -10,8 +10,8 @@ export class AppService {
     ) {
     }
 
-    getOlaMundo(): Observable<any> {
-        return this.httpClient.get('https://economia.awesomeapi.com.br/json/last/USD-BRL');
+    getTags(): Observable<string[]> {
+        return this.httpClient.get<string[]>('https://cataas.com/api/tags');
     }
 
 }

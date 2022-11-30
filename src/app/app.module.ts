@@ -8,6 +8,7 @@ import { HomeModule } from './pages/home/home.module';
 import { InputsModule } from './pages/inputs/inputs.module';
 import { NgContentModule } from './pages/ng-content/ng-content.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Decorator ou decorador @ngModule. Usado para "Decorar" a classe e informar pro angular que elá será um módulo.
 // Um módulo no angular é a parte mais importante e a que faz tudo se comunicar e funcionar.
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     // é o BrowserModule que realiza configurações para que a aplicação rode em navegadores;
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     DataBindingModule,
     HomeModule,
     InputsModule,

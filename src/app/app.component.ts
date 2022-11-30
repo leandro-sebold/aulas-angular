@@ -13,13 +13,27 @@ import { InputsComponent } from './pages/inputs/inputs.component';
 export class AppComponent { // consigo ter classes de uso interno, mas se eu precisar utilizar ela fora desse arquivo, preciso exportar ela.
   _title = 'APP Component'; // propriedade pública para definir um título que será utilizado no HTML.
 
-  constructor(
-    appService: AppService
-  ) {
-    appService.getOlaMundo().subscribe((cotacao) => {
-      console.log(cotacao);
-    })
+  tags: string[] = [];
+  selectedTag: string
+  linkImage: string;
+  statusCode: string;
 
+  constructor(
+    private appService: AppService
+  ) {}
+
+  ngOnInit(): void {
+    this.appService.getTags()
+    .subscribe(tags => {
+      console.log(tags);
+      this.tags = tags;
+    });
   }
+
+  consultar() {
+    console.log(this.selectedTag);
+    this.linkImage = 'https://http.cat/' + Number(this.statusCode);
+  }
+
 
 }
